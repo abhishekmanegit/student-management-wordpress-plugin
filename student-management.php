@@ -7,3 +7,15 @@
  */
 
 defined('ABSPATH') || exit;
+
+add_action('init', 'smp_register_student_cpt');
+
+function smp_register_student_cpt() {
+    $args = array(
+        'public' => true,
+        'label'  => 'Students',
+        'supports' => array('title'),
+    );
+
+    register_post_type('student', $args);
+}
